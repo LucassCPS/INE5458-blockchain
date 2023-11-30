@@ -29,7 +29,7 @@ git clone https://github.com/LucassCPS/INE5458-blockchain.git
 - Copy and paste the "app" folder to "~/mywork/vars/chaincode" like the following command:
 
 ```
-sudo cp -r [app_folder_path] ~/mywork/vars/chaincode/
+sudo cp -r ~/mywork/INE5458-blockchain/app/ ~/mywork/vars/chaincode/
 ```
 
 - Install the chaincode:
