@@ -10,38 +10,58 @@ Before running the project, ensure that both [Docker](https://docs.docker.com/en
 
 - Get MiniFab's script:
 
-```mkdir -p ~/mywork && cd ~/mywork && curl -o minifab -sL https://tinyurl.com/yxa2q6yr && chmod +x minifab```
+```
+mkdir -p ~/mywork && cd ~/mywork && curl -o minifab -sL https://tinyurl.com/yxa2q6yr && chmod +x minifab
+```
 
 - Get our chaincode:
 
-```git clone https://github.com/LucassCPS/INE5458-blockchain.git```
+```
+git clone https://github.com/LucassCPS/INE5458-blockchain.git
+```
 
 - Get the MiniFab's network running:
 
-```./minifab up```
+```
+./minifab up
+```
 
 - Install the chaincode:
 
-```./minifab ccup -n app -l go -d false -v 2.0```
+```
+./minifab ccup -n app -l go -d false -v 2.0
+```
 
 - Copy and paste the "app" folder to "~/mywork/vars/chaincode" like the following command:
 
-```sudo cp -r [app_folder_path] ~/mywork/vars/chaincode/```
+```
+sudo cp -r [app_folder_path] ~/mywork/vars/chaincode/
+```
 
 ## How to use the application
 
 - Test the chaincode by invoking the implemented functions. You can use MiniFab commands like:
 
-```./minifab invoke -p '"AddProduct", "manufacturerName", "modelName", "modelId", "anyExtraInformatin"'```
+```
+./minifab invoke -p '"AddProduct", "manufacturerName", "modelName", "modelId", "anyExtraInformatin"'
+```
 
-```./minifab invoke -p '"GetProduct", "modelName", "modelId"'```
+```
+./minifab invoke -p '"GetProduct", "modelName", "modelId"'
+```
 
-```./minifab invoke -p '"GetAllProducts"'```
+```
+./minifab invoke -p '"GetAllProducts"'
+```
 
-```./minifab invoke -p '"GetProductsByManufacturer", "manufacturerName"'```
+```
+./minifab invoke -p '"GetProductsByManufacturer", "manufacturerName"'
+```
 
 ## Clean up the network
 
 - Clean up the MiniFabric network when you are done:
 
-```./minifabric cleanup```
+```
+./minifabric cleanup
+```
