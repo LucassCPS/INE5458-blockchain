@@ -1,31 +1,47 @@
 # INE5458-Blockchain MiniFabric Product Description Project
 
-This project demonstrates a simple blockchain application using Hyperledger Fabric's MiniFabric tool. The goal of the application is to simulate a product description insertion system on a blockchain.
+This project demonstrates a simple blockchain application using Hyperledger Fabric's MiniFabric tool. The goal of the application is to simulate a product technical description insertion system on a blockchain.
 
 ## Prerequisites
 
-Before running the project, ensure that Docker is installed on your machine. You can follow the instructions for installing Docker on Ubuntu [here](https://docs.docker.com/engine/install/).
+Before running the project, ensure that both [Docker](https://docs.docker.com/engine/install/) and [Go](https://go.dev/doc/install) are installed on your machine. 
 
 ## Steps to Run the Project Manually
 
-- Clone the repository:
+- Get MiniFab's script:
 
-```git clone git@github.com:LucassCPS/INE5458-blockchain.git```
+```mkdir -p ~/mywork && cd ~/mywork && curl -o minifab -sL https://tinyurl.com/yxa2q6yr && chmod +x minifab```
 
-```cd INE5458-blockchain```
+- Get our chaincode:
 
-```chmod +x setup.sh```
+```git clone https://github.com/LucassCPS/INE5458-blockchain.git```
 
-```./setup.sh```
+- Get the MiniFab's network running:
 
-- Test the chaincode by invoking functions. You can use MiniFab commands like:
+```./minifab up```
 
-```./minifab invoke -n app -p '"AddProduct", "arg"'```
+- Install the chaincode:
 
-```./minifab invoke -n app -p '"GetProduct", "arg"'```
+```./minifab ccup -n app -l go -d false -v 2.0```
 
-```./minifab invoke -n app -p '"GetAllProducts", "arg"'```
+- Copy and paste the "app" folder to "~/mywork/vars/chaincode" like the following command:
 
-- Clean up the MiniFabric network when done:
+```sudo cp -r [app_folder_path] ~/mywork/vars/chaincode/```
+
+## How to use the application
+
+- Test the chaincode by invoking the implemented functions. You can use MiniFab commands like:
+
+```./minifab invoke -p '"AddProduct", "manufacturerName", "modelName", "modelId", "anyExtraInformatin"'```
+
+```./minifab invoke -p '"GetProduct", "modelName", "modelId"'```
+
+```./minifab invoke -p '"GetAllProducts"'```
+
+```./minifab invoke -p '"GetProductsByManufacturer", "manufacturerName"'```
+
+## Clean up the network
+
+- Clean up the MiniFabric network when you are done:
 
 ```./minifabric cleanup```
