@@ -26,16 +26,16 @@ git clone https://github.com/LucassCPS/INE5458-blockchain.git
 ./minifab up
 ```
 
-- Install the chaincode:
-
-```
-./minifab ccup -n app -l go -d false -v 2.0
-```
-
 - Copy and paste the "app" folder to "~/mywork/vars/chaincode" like the following command:
 
 ```
 sudo cp -r [app_folder_path] ~/mywork/vars/chaincode/
+```
+
+- Install the chaincode:
+
+```
+./minifab ccup -n app -l go -d false -v 2.0
 ```
 
 ## How to use the application
