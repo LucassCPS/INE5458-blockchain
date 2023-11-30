@@ -43,7 +43,7 @@ sudo cp -r ~/mywork/INE5458-blockchain/app/ ~/mywork/vars/chaincode/
 - Test the chaincode by invoking the implemented functions. You can use MiniFab commands like:
 
 ```
-./minifab invoke -p '"AddProduct", "manufacturerName", "modelName", "modelId", "anyExtraInformatin"'
+./minifab invoke -p '"AddProduct", "manufacturerName", "modelName", "modelId", "anyExtraInformation"'
 ```
 
 ```
@@ -63,5 +63,5 @@ sudo cp -r ~/mywork/INE5458-blockchain/app/ ~/mywork/vars/chaincode/
 - Clean up the MiniFabric network when you are done:
 
 ```
-./minifabric cleanup
+./minifab cleanup
 ```
