@@ -14,7 +14,7 @@ Before running the project, ensure that both [Docker](https://docs.docker.com/en
 mkdir -p ~/mywork && cd ~/mywork && curl -o minifab -sL https://tinyurl.com/yxa2q6yr && chmod +x minifab
 ```
 
-- Get our chaincode:
+- Get our chaincode if you don't already have it:
 
 ```
 git clone https://github.com/LucassCPS/INE5458-blockchain.git
@@ -26,7 +26,7 @@ git clone https://github.com/LucassCPS/INE5458-blockchain.git
 ./minifab up
 ```
 
-- Copy and paste the "app" folder to "~/mywork/vars/chaincode" like the following command:
+- Copy and paste the "app" folder to "~/mywork/vars/chaincode" with something like the following command:
 
 ```
 sudo cp -r ~/mywork/INE5458-blockchain/app/ ~/mywork/vars/chaincode/
